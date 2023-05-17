@@ -30,7 +30,7 @@ def search_by_date(date):
 # Requisito 9
 def search_by_category(category):
     news_by_category = search_news(
-        {"categories": {"$regex": category, "$options": "i"}}
+        {"category": {"$regex": category, "$options": "i"}}
     )
     formated_list = [(new["title"], new["url"]) for new in news_by_category]
     return formated_list
