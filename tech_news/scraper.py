@@ -1,6 +1,7 @@
 import requests
 import time
 from parsel import Selector
+from tech_news.database import create_news
 
 
 # Requisito 1 - Crie a função fetch
@@ -38,9 +39,7 @@ def scrape_news(html_content):
     url = selector.css("link[rel=canonical]::attr(href)").get()
     title = selector.css("h1.entry-title::text").get()
     timestamp = selector.css("ul.post-meta li.meta-date::text").get()
-    writer = selector.css(
-        "ul.post-meta li.meta-author a::text"
-    ).get()
+    writer = selector.css("ul.post-meta li.meta-author a::text").get()
     reading_time = selector.css(
         "ul.post-meta li.meta-reading-time::text"
     ).get()
@@ -64,4 +63,21 @@ def scrape_news(html_content):
 
 # Requisito 5
 def get_tech_news(amount):
-    """Seu código deve vir aqui"""
+    url = "https://blog.betrybe.com/"
+    link_list = []
+    news_list = []
+
+    while len(link_list) < amount:
+        html = fetch(url)
+        links = scrape_updates(html)
+        link_list.extend(links)
+        url_next_page = scrape_next_page_link(html)
+        url = url_next_page
+# list[:amount] funciona como um slice, pegando apenas a quantidade de links
+    for link in link_list[:amount]:
+        html = fetch(link)
+        news = scrape_news(html)
+        news_list.append(news)
+
+    create_news(news_list)
+    return news_list
