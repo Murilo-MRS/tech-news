@@ -5,9 +5,9 @@ Projeto realizado durante módulo de Ciência da Computação do curso de desenv
 <details>
   <summary><strong>👨‍💻 O que foi feito</strong></summary></br>
 
-Neste projeto foi desenvolvido uma aplicação para raspagem e manipulação de dados de um site de notícias sobre tecnologia. Esses dados serão armazenados no banco de dados MongoDB para serem persistidos.
+Neste projeto foi desenvolvido uma aplicação para raspagem e manipulação de dados de um site de notícias sobre tecnologia. Esses dados são armazenados no banco de dados MongoDB para serem persistidos.
 
-Com os dados salvos no MongoDB é possível criar scripts para análises de dados. A análise de dados é essencial para qualquer área de uma empresa, afinal, por meio dela é possível tomar decisões com segurança, melhorar processos, etc.
+A raspagem de dados tem sido muito útil em trabalhos jornalísticos, fornecendo dados para embasar matérias, mas também pode ser útil para outros fins, como comparar preços de produtos com a concorrência; automatização de processos maçantes como buscar artigos científicos em bases acadêmicas; recuperação de documentos em sites jurídicos; analisar perfis de redes sociais; recuperar dados públicos do governo e muitos outros lugares.
 
 </details>
 <details>
